@@ -1,0 +1,258 @@
+///JSON
+{
+  "baseUrl": "https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be",
+  "dataProducts": [
+    {
+      "dataSourceId": "cd6527b3-b8a8-48eb-a0e0-db522d370aab",
+      "fieldsToHide": [
+        "has_account_betting",
+        "has_account_gaming",
+        "operational_player_account_group_id",
+        "player_account_state_name",
+        "player_address_validation",
+        "player_address",
+        "player_address_complement",
+        "player_address_has_house_number",
+        "player_allow_remarketing",
+        "player_belgian_province",
+        "player_birth_city",
+        "player_birthcountry_iso_code",
+        "player_city",
+        "player_civility_name",
+        "player_company",
+        "player_conditions_accepted_date",
+        "player_country_iso_code",
+        "player_generation_name",
+        "player_generation_order",
+        "player_identification_document_expiration_date",
+        "player_identification_document_issue_date",
+        "player_identity_status",
+        "player_is_email_activation_done",
+        "player_is_employee",
+        "player_is_resident",
+        "player_last_name_particle",
+        "player_last_successful_connection_date_utc",
+        "player_municipality",
+        "player_national_register_number",
+        "player_phone_number",
+        "player_phone_number_2",
+        "player_phone_validation",
+        "player_phone_validation_date",
+        "player_privacy_conditions_accepted_date",
+        "player_profession",
+        "player_registration_ip",
+        "player_registration_provider_name",
+        "player_second_first_name",
+        "player_second_last_name",
+        "player_sign_up_date_utc",
+        "player_sponsorship_code",
+        "player_zip_code",
+        "player_account_classification",
+        "player_receive_post_notification",
+        "primary_has_history"
+      ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "e1607c01-40a1-48e2-aa0e-bf55353f218c", 
+      "fieldsToHide": [ "player_last_successful_connection_time_utc" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "c2c08e2c-c8d7-4521-b61e-4dbe8cd54df2", 
+      "fieldsToHide": [ "player_registration_date_utc" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "51bb7e6d-bb58-42dc-989d-53e6c52dd203",
+      "fieldsToHide": [ "last_date" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "dea88ca5-45d3-477f-a23b-26589a96e2ab", 
+      "fieldsToHide": [ "full_date" ],
+      "fieldsToUnhide": []
+    }
+  ]
+}
+
+PS C:\repositories\segmentation-manual> dotnet run -- --url https://sgmt-segmentation-du.777be-prd-ee-sg.777.be --config ip-1707-config.json --method visibility
+Segmentation Manual - Management Tools
+
+Base URL: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be
+
+Selected tool: visibility - Manages field visibility (hide/unhide)
+
+
+Processing 5 DataProduct(s)...
+
+
+DataSource: cd6527b3-b8a8-48eb-a0e0-db522d370aab
+  Hide: has_account_betting
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/has_account_betting/Visibility/Hide
+Success: OK
+  Hide: has_account_gaming
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/has_account_gaming/Visibility/Hide
+Success: OK
+  Hide: operational_player_account_group_id
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/operational_player_account_group_id/Visibility/Hide
+Success: OK
+  Hide: player_account_state_name
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_account_state_name/Visibility/Hide
+Success: OK
+  Hide: player_address_validation
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_address_validation/Visibility/Hide
+Success: OK
+  Hide: player_address
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_address/Visibility/Hide
+Success: OK
+  Hide: player_address_complement
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_address_complement/Visibility/Hide
+Success: OK
+  Hide: player_address_has_house_number
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_address_has_house_number/Visibility/Hide
+Success: OK
+  Hide: player_allow_remarketing
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_allow_remarketing/Visibility/Hide
+Success: OK
+  Hide: player_belgian_province
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_belgian_province/Visibility/Hide
+Success: OK
+  Hide: player_birth_city
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_birth_city/Visibility/Hide
+Success: OK
+  Hide: player_birthcountry_iso_code
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_birthcountry_iso_code/Visibility/Hide
+Success: OK
+  Hide: player_city
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_city/Visibility/Hide
+Success: OK
+  Hide: player_civility_name
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_civility_name/Visibility/Hide
+Success: OK
+  Hide: player_company
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_company/Visibility/Hide
+Success: OK
+  Hide: player_conditions_accepted_date
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_conditions_accepted_date/Visibility/Hide
+Success: OK
+  Hide: player_country_iso_code
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_country_iso_code/Visibility/Hide
+Success: OK
+  Hide: player_generation_name
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_generation_name/Visibility/Hide
+Success: OK
+  Hide: player_generation_order
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_generation_order/Visibility/Hide
+Success: OK
+  Hide: player_identification_document_expiration_date
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_identification_document_expiration_date/Visibility/Hide
+Success: OK
+  Hide: player_identification_document_issue_date
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_identification_document_issue_date/Visibility/Hide
+Success: OK
+  Hide: player_identity_status
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_identity_status/Visibility/Hide
+Success: OK
+  Hide: player_is_email_activation_done
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_is_email_activation_done/Visibility/Hide
+Success: OK
+  Hide: player_is_employee
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_is_employee/Visibility/Hide
+Success: OK
+  Hide: player_is_resident
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_is_resident/Visibility/Hide
+Success: OK
+  Hide: player_last_name_particle
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_last_name_particle/Visibility/Hide
+Success: OK
+  Hide: player_last_successful_connection_date_utc
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_last_successful_connection_date_utc/Visibility/Hide
+Success: OK
+  Hide: player_municipality
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_municipality/Visibility/Hide
+Success: OK
+  Hide: player_national_register_number
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_national_register_number/Visibility/Hide
+Success: OK
+  Hide: player_phone_number
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_phone_number/Visibility/Hide
+Success: OK
+  Hide: player_phone_number_2
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_phone_number_2/Visibility/Hide
+Success: OK
+  Hide: player_phone_validation
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_phone_validation/Visibility/Hide
+Success: OK
+  Hide: player_phone_validation_date
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_phone_validation_date/Visibility/Hide
+Success: OK
+  Hide: player_privacy_conditions_accepted_date
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_privacy_conditions_accepted_date/Visibility/Hide
+Success: OK
+  Hide: player_profession
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_profession/Visibility/Hide
+Success: OK
+  Hide: player_registration_ip
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_registration_ip/Visibility/Hide
+Success: OK
+  Hide: player_registration_provider_name
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_registration_provider_name/Visibility/Hide
+Success: OK
+  Hide: player_second_first_name
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_second_first_name/Visibility/Hide
+Success: OK
+  Hide: player_second_last_name
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_second_last_name/Visibility/Hide
+Success: OK
+  Hide: player_sign_up_date_utc
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_sign_up_date_utc/Visibility/Hide
+Success: OK
+  Hide: player_sponsorship_code
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_sponsorship_code/Visibility/Hide
+Success: OK
+  Hide: player_zip_code
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_zip_code/Visibility/Hide
+Success: OK
+  Hide: player_account_classification
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_account_classification/Visibility/Hide
+Error BadRequest: {"message":"Cannot hide field 'player_account_classification' because it is used in 109 segment(s).","fieldName":"player_account_classification","dataSourceId":"cd6527b3-b8a8-48eb-a0e0-db522d370aab","segmentIds":["528577da-2403-41e6-8f32-0376e25ed54f","70aaf4a7-f049-47ca-8b0a-ce102a0a474f","dce4c8e2-c4c1-4e5e-a980-716b808992ee","bad2dead-ee93-4493-a542-301a371858ae","5ec3b0bf-092a-43c0-8f13-758b8c32e4b1","87a2b82c-fdda-4a78-af9c-ffffdf479baa","8556ecd5-68a0-4fb4-ab98-48819c695ae4","b11480bc-1e31-43e8-aa0e-cbd223fff6ab","15364e5a-32a3-4ca7-86b3-78b588b44cdc","9a69fa49-c352-4969-a789-e9fef01841d3","4cddf928-23f8-4e0c-811d-f3dd9e7cbe16","114cb15d-fef4-4dfa-8b45-fb45c2fff3b1","e9d40845-8172-4d43-9a68-fd45325974a6","ea1c5211-4891-41b5-a8e1-695918a5c2ba","3274a38d-6b4d-4e94-ab5a-6111feaf4ddb","1e0efad2-1625-47e8-b7d9-e0139d37869c","fd5fe7fb-d554-4dd5-886e-32607c9c158a","e1bc0e86-a825-44e2-a3b9-1d6352deefc6","96214df7-5411-49c5-ab21-06c81f3ff7f0","0b37c461-9118-4e2d-af25-86b354d6c1ee","10b3e985-07dc-4a77-89bd-f1c1c6613c96","42f9c35d-6872-4cfd-af68-0abb8e44e597","4953d50e-5cdb-4ec8-b0b7-fa301a3b8284","5bd6985e-ddb2-40be-8d3b-3fbd64004f0b","1034a07c-7df3-4403-986a-ea76d1269936","792bb0e1-1057-4b8c-9a3e-a93b830a4969","16dea9f3-0394-4ce8-a772-6fa58b2c85e5","c6424e64-55f2-4d50-86b0-2d0db100f655","6f672123-0d34-44dd-8c14-ec79fe3fef42","53a3fd38-d994-4863-84c8-8f8e50af6fdd","6f4517fa-ba48-49ba-a83b-09f6a5887608","a5deef55-a594-4989-92e7-65bf8344c3b2","af245648-e568-442c-b6c4-3dc01f833925","255774b2-7a10-4ed6-9d9d-b758f49bdae3","3f0ad49e-c510-4cd0-97b4-51f6ab4d6d15","e73fd850-dc25-4c81-b841-cd3f81bd17e2","b3961c2e-092b-450f-b9f4-33934b0e0df9","6b60682c-904b-4b87-bcfb-e5aa241d3aba","b8d51099-c0e1-49e2-9987-d48abcd355ac","bfc26291-0806-404f-82d1-521c59559c5b","1b5a328a-0406-4cd3-b4f2-bb8523714201","2e97d9bc-d0d2-4cb7-886b-f0f11bcdb538","4757f76b-b42a-4162-ac20-35e70e0bed8d","f94487c3-092f-43b3-b674-e135930bb538","46345883-232f-458a-8f8a-e51efd67570d","43254f59-d224-4014-b0c0-87be196ad001","dbea42b1-d12a-40b9-be52-459d827276d9","eee81db0-1674-42ad-b08c-b840fe1885e5","679e7d9a-e8ad-4bf8-b468-7fbae7d29c64","0e3aea0d-38ef-47e9-9b5d-7e277f25d969","40a2aa34-84aa-411f-8786-c4e7cd8d5fd0","8a369466-a6d8-4c99-9c94-bdcecea12acd","0d602916-25ac-44eb-b01a-e2b4e809c910","1e1e3b09-9370-452a-985b-980be36e8b86","285d8fe0-ce34-4978-85c0-b1b0fc3ceb1a","bcb25f05-d4b2-40c5-8571-907ffad0ca4c","81c7d16f-3d8e-4ca7-8f31-92c73ed6b113","1f71c7a4-8d3c-4928-b1d6-ec014cb89e69","9082148e-588f-45a2-95dc-2b2e99179d08","8e985a8e-eda4-4563-83cb-6ef40f7971fa","bb227427-c558-4e67-b0b5-cf2277a90c83","198e353b-09d2-4a2b-8095-e7d6a01f5f02","0b982905-d7ee-4ccf-84c7-d9855479e1c2","c9f8e49b-6808-4856-bd2c-49c95b131747","8d0ce138-c433-4b29-a5c1-af2f827e206c","47e25d1e-ada7-47f5-aa9e-4cabefce4af1","0ee3a4e7-f416-4b45-aa10-92d95d7f9db0","bb883575-1f9d-4e4b-8bce-8d096cd410e2","900d9676-aacf-417f-b9a8-2c55db86b10a","d65c3d90-9704-4495-823f-e11c15b949ac","89c930b9-a9a1-485d-ae33-406725d86822","1abb8b2d-268d-40e8-8cac-f9d1610de74b","6928b4a6-78e7-4115-b438-48b71f15e8d3","2382ef84-29b2-4085-a2a4-b7c7acd4ed6a","98df8d2f-dabb-4de0-bcc1-0225affaaf14","425509ba-2868-4fb4-b3b6-f4ba3ad3372d","c0fdbb6f-e06b-4371-bb80-70b594cb9dc2","dccdbe76-8821-48d9-98b8-e1701b82b0cd","13b28cbc-a677-437c-b79a-a4d5881b74ea","c4414ad6-fabf-4f9b-8df5-9de790f8b5a0","fe9164de-f37d-4b39-9191-cfebf512ae17","2c5f0eac-f9d0-4c9f-9a3b-cf9c1d39eea1","7c6ec57b-9373-4d05-aa5e-718d43f83494","dc69e96a-663f-4396-b7e0-de1cd2f614b1","aa07f973-73d5-4dc1-ab03-0dfd291e0bce","b29e6a0a-ca53-4dcd-b277-2546ff939aaf","59e44825-5f1c-4bf1-8d8d-1d1f09ea11b0","5dc05482-17b3-4b96-8414-130e77043c3f","3879e8d9-ad8b-440f-9491-86145986de6b","4adc770a-07a6-445e-9213-08ea70b3fa97","960f7121-0d90-4416-9dcc-660466ba1a9c","ef04a4ce-469d-457d-a68e-cd4e4cb296dd","88c02a2a-5b90-4649-9714-137180d7379e","abad8835-b577-40d6-95d5-7791e1309a42","0e8625b6-f72e-4edb-97fa-93f429470664","c79b4ecc-9a38-4caf-95a8-d98ebe10a8ea","6b93ab94-cf5b-4464-b2d1-3ad2a2c2512a","071ae36c-70fd-4fd3-a3dc-dfd4a603c256","3c6f5683-6430-4740-9268-aa7c3347fd6b","a75e538a-5411-436c-81be-4a6c4000c02c","7805e26e-fe28-4cc0-ac21-f49d6d94ef8f","decc31d3-f348-4593-a13d-6bc34c1a8020","de651126-1821-49a4-aa13-017719874aed","edc08193-e097-4159-b9a9-e8923121640b","a46c10e6-1818-4b97-8d1b-42c6b4c772fa","b9feddd4-b7b2-48a6-affd-4021d27aa40a","3cb4337f-a5d1-4979-8823-e3904d23b562","3e92558b-407d-4969-9a9f-c59c9bd52c2f","044f479e-3917-40ad-a9b0-ce5e9793f198"]}
+  Hide: player_receive_post_notification
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_receive_post_notification/Visibility/Hide
+Success: OK
+  Hide: primary_has_history
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/primary_has_history/Visibility/Hide
+Success: OK
+
+DataSource: e1607c01-40a1-48e2-aa0e-bf55353f218c
+  Hide: player_last_successful_connection_time_utc
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/e1607c01-40a1-48e2-aa0e-bf55353f218c/Fields/player_last_successful_connection_time_utc/Visibility/Hide
+Success: OK
+
+DataSource: c2c08e2c-c8d7-4521-b61e-4dbe8cd54df2
+  Hide: player_registration_date_utc
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/c2c08e2c-c8d7-4521-b61e-4dbe8cd54df2/Fields/player_registration_date_utc/Visibility/Hide
+Error BadRequest: {"message":"Cannot hide field 'player_registration_date_utc' because it is used in 2 segment(s).","fieldName":"player_registration_date_utc","dataSourceId":"c2c08e2c-c8d7-4521-b61e-4dbe8cd54df2","segmentIds":["3274a38d-6b4d-4e94-ab5a-6111feaf4ddb","960f7121-0d90-4416-9dcc-660466ba1a9c"]}
+
+DataSource: 51bb7e6d-bb58-42dc-989d-53e6c52dd203
+  Hide: last_date
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/51bb7e6d-bb58-42dc-989d-53e6c52dd203/Fields/last_date/Visibility/Hide
+Success: OK
+
+DataSource: dea88ca5-45d3-477f-a23b-26589a96e2ab
+  Hide: full_date
+Executing: https://sgmt-segmentation-du.777be-prd-ee-sg.777.be/api/DataSources/dea88ca5-45d3-477f-a23b-26589a96e2ab/Fields/full_date/Visibility/Hide
+Success: OK
+
+==================================================
+SUMMARY
+==================================================
+Success: 47
+Failures: 2
+Total: 49 operations
+==================================================
+
+Failed operations:
+  - Hide player_account_classification in cd6527b3-b8a8-48eb-a0e0-db522d370aab
+  - Hide player_registration_date_utc in c2c08e2c-c8d7-4521-b61e-4dbe8cd54df2
+PS C:\repositories\segmentation-manual>
