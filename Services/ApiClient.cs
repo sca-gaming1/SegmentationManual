@@ -19,35 +19,47 @@ public class ApiClient : IDisposable
     public async Task<bool> HideFieldAsync(
         string dataSourceId,
         string fieldName,
+        HttpMethod method,
         CancellationToken cancellationToken = default
     )
     {
         var endpoint = $"/api/DataSources/{dataSourceId}/Fields/{fieldName}/Visibility/Hide";
-        return await ExecuteVisibilityRequestAsync(endpoint, cancellationToken);
+        return await ExecuteVisibilityRequestAsync(endpoint, method, cancellationToken);
     }
 
     public async Task<bool> UnhideFieldAsync(
         string dataSourceId,
         string fieldName,
+        HttpMethod method,
         CancellationToken cancellationToken = default
     )
     {
         var endpoint = $"/api/DataSources/{dataSourceId}/Fields/{fieldName}/Visibility/Unhide";
-        return await ExecuteVisibilityRequestAsync(endpoint, cancellationToken);
+        return await ExecuteVisibilityRequestAsync(endpoint, method, cancellationToken);
     }
 
     private async Task<bool> ExecuteVisibilityRequestAsync(
         string endpoint,
+        HttpMethod method,
         CancellationToken cancellationToken
     )
     {
         try
         {
             var url = $"{_baseUrl}{endpoint}";
-            Console.WriteLine($"Executing: {url}");
+            Console.WriteLine($"Executing {method.Method}: {url}");
 
-            var request = new HttpRequestMessage(HttpMethod.Put, url);
-            request.Content = new StringContent("{}", System.Text.Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(method, url);
+
+            if (method == HttpMethod.Post || method == HttpMethod.Put)
+            {
+                request.Content = new StringContent(
+                    "{}",
+                    System.Text.Encoding.UTF8,
+                    "application/json"
+                );
+            }
+
             var response = await _httpClient.SendAsync(request, cancellationToken);
 
             if (response.IsSuccessStatusCode)

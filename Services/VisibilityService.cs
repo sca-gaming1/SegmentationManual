@@ -14,33 +14,43 @@ public class VisibilityService : ITool
         _apiClient = apiClient;
     }
 
-    public async Task<ProcessingResult> ExecuteAsync(VisibilityConfiguration config, CancellationToken cancellationToken = default)
+    public async Task<ProcessingResult> ExecuteAsync(
+        VisibilityConfiguration config,
+        CancellationToken cancellationToken = default
+    )
     {
         var result = new ProcessingResult();
-        
+
         Console.WriteLine($"\nProcessing {config.DataProducts.Count} DataProduct(s)...\n");
 
         foreach (var dataProduct in config.DataProducts)
         {
             Console.WriteLine($"\nDataSource: {dataProduct.DataSourceId}");
-            
+
             foreach (var fieldName in dataProduct.FieldsToHide)
             {
                 Console.WriteLine($"  Hide: {fieldName}");
-                var success = await _apiClient.HideFieldAsync(dataProduct.DataSourceId, fieldName, cancellationToken);
-                
+                var success = await _apiClient.HideFieldAsync(
+                    dataProduct.DataSourceId,
+                    fieldName,
+                    HttpMethod.Put,
+                    cancellationToken
+                );
+
                 if (success)
                     result.SuccessCount++;
                 else
                     result.FailureCount++;
-                
-                result.Operations.Add(new OperationResult
-                {
-                    DataSourceId = dataProduct.DataSourceId,
-                    FieldName = fieldName,
-                    Operation = "Hide",
-                    Success = success
-                });
+
+                result.Operations.Add(
+                    new OperationResult
+                    {
+                        DataSourceId = dataProduct.DataSourceId,
+                        FieldName = fieldName,
+                        Operation = "Hide",
+                        Success = success,
+                    }
+                );
 
                 await Task.Delay(500, cancellationToken);
             }
@@ -48,20 +58,27 @@ public class VisibilityService : ITool
             foreach (var fieldName in dataProduct.FieldsToUnhide)
             {
                 Console.WriteLine($"  Unhide: {fieldName}");
-                var success = await _apiClient.UnhideFieldAsync(dataProduct.DataSourceId, fieldName, cancellationToken);
-                
+                var success = await _apiClient.UnhideFieldAsync(
+                    dataProduct.DataSourceId,
+                    fieldName,
+                    HttpMethod.Put,
+                    cancellationToken
+                );
+
                 if (success)
                     result.SuccessCount++;
                 else
                     result.FailureCount++;
-                
-                result.Operations.Add(new OperationResult
-                {
-                    DataSourceId = dataProduct.DataSourceId,
-                    FieldName = fieldName,
-                    Operation = "Unhide",
-                    Success = success
-                });
+
+                result.Operations.Add(
+                    new OperationResult
+                    {
+                        DataSourceId = dataProduct.DataSourceId,
+                        FieldName = fieldName,
+                        Operation = "Unhide",
+                        Success = success,
+                    }
+                );
 
                 await Task.Delay(500, cancellationToken);
             }

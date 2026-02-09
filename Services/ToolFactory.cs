@@ -9,7 +9,9 @@ public static class ToolFactory
         return toolName.ToLowerInvariant() switch
         {
             "visibility" => new VisibilityService(apiClient),
-            _ => throw new ArgumentException($"Unknown tool: {toolName}. Available tools: visibility")
+            _ => throw new ArgumentException(
+                $"Unknown tool: {toolName}. Available tools: visibility"
+            ),
         };
     }
 

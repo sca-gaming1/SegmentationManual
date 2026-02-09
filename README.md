@@ -1,114 +1,63 @@
 # Segmentation Manual
 
-Application console C# pour gérer la visibilité des champs dans l'API de segmentation.
+Console application for managing field visibility in the segmentation API.
 
-## Fonctionnalités
+## Features
 
-- ✅ Hide/Unhide des champs via l'API
-- ✅ Configuration via fichier JSON
-- ✅ Support de multiples DataSources
-- ✅ Gestion des erreurs et retry
-- ✅ Rapport détaillé des opérations
+- Hide/Unhide fields via API
+- JSON configuration support
+- Multiple DataSources support
+- Error handling and detailed reports
 
-## Structure du projet
+## Quick Start
 
-```
-segmentation-manual/
-├── Models/
-│   └── FieldVisibilityRequest.cs    # Modèles de données
-├── Services/
-│   ├── ApiClient.cs                 # Client HTTP pour l'API
-│   └── VisibilityService.cs         # Service de gestion de visibilité
-├── Program.cs                        # Point d'entrée
-├── config.json                       # Fichier de configuration exemple
-├── config.json.example              # Exemple de configuration
-├── SegmentationManual.sln           # Fichier solution
-├── segmentation-manual.csproj       # Fichier projet
-└── README.md                         # Documentation
-```
-
-## Configuration
-
-Créez un fichier `config.json` avec la structure suivante:
+1. Create a `config.json` file:
 
 ```json
 {
   "baseUrl": "https://sgmt-segmentation-{tenant}.cibe-prd-ee-sg.circus.be",
   "dataProducts": [
     {
-      "dataSourceId": "votre-datasource-id",
-      "fieldsToHide": [
-        "champ1",
-        "champ2"
-      ],
-      "fieldsToUnhide": [
-        "champ3"
-      ]
+      "dataSourceId": "your-datasource-id",
+      "fieldsToHide": ["field1", "field2"],
+      "fieldsToUnhide": ["field3"]
     }
   ]
 }
 ```
 
-### Paramètres
-
-- `baseUrl`: URL de base de l'API (peut être surchargée via `--url`)
-- `dataProducts`: Liste des DataSources à traiter
-  - `dataSourceId`: Identifiant de la DataSource
-  - `fieldsToHide`: Liste des champs à cacher
-  - `fieldsToUnhide`: Liste des champs à rendre visibles
-
-## Utilisation
-
-### Compilation
+2. Run the application:
 
 ```bash
-dotnet build
+dotnet run -- --url https://sgmt-segmentation-du.777be-prd-ee-sg.777.be --config ip-1707-config.json --method visibility
 ```
 
-### Exécution
+## Usage
 
 ```bash
-# Utiliser la config.json par défaut
+# With default config.json
 dotnet run
 
-# Spécifier une URL différente
-dotnet run -- --url https://sgmt-segmentation-777.cibe-prd-ee-sg.circus.be
+# With custom config file
+dotnet run -- --config my-config.json --method visibility
 
-# Utiliser un fichier de config personnalisé
-dotnet run -- --config my-config.json
-
-# Combinaison
-dotnet run -- --url https://sgmt-segmentation-777.cibe-prd-ee-sg.circus.be --config my-config.json
+# With custom URL
+dotnet run -- --url https://sgmt-segmentation-777.cibe-prd-ee-sg.circus.be --config ip-1707-config.json --method visibility
 ```
 
-### Exécution du binaire
+## Options
 
-```bash
-# Après compilation (Release)
-.\bin\Release\net10.0\segmentation-manual.exe --url https://sgmt-segmentation-777.cibe-prd-ee-sg.circus.be
-```
+- `--url <url>` - Base API URL
+- `--config <file>` - JSON configuration file (default: config.json)
+- `--method <tool>` - Tool to use (default: visibility)
+- `--tool <tool>` - Alias for --method
+- `--help, -h` - Show help
 
-## Endpoints API utilisés
+## Available Tools
 
-- **Hide**: `POST /api/DataSources/{dataSourceId}/Fields/{fieldName}/Visibility/Hide`
-- **Unhide**: `POST /api/DataSources/{dataSourceId}/Fields/{fieldName}/Visibility/Unhide`
+- `visibility` - Manages field visibility (hide/unhide)
 
-## Exemples de tenants
+## API Endpoints
 
-- `777`: `https://sgmt-segmentation-777.cibe-prd-ee-sg.circus.be`
-- `cibe`: `https://sgmt-segmentation-cibe.cibe-prd-ee-sg.circus.be`
-- `du`: `https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be`
-
-## Gestion des erreurs
-
-L'application gère automatiquement:
-- Les timeouts (5 minutes par défaut)
-- Les erreurs HTTP
-- Les erreurs de réseau
-- Affiche un rapport détaillé des succès/échecs
-
-## Notes
-
-- Un délai de 500ms est ajouté entre chaque requête pour éviter de surcharger l'API
-- Le timeout est configuré à 5 minutes par requête
-- Toutes les opérations sont loggées dans la console
+- Hide: `PUT /api/DataSources/{dataSourceId}/Fields/{fieldName}/Visibility/Hide`
+- Unhide: `PUT /api/DataSources/{dataSourceId}/Fields/{fieldName}/Visibility/Unhide`
