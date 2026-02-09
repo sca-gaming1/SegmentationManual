@@ -1,0 +1,76 @@
+{
+  "baseUrl": "https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be",
+  "dataProducts": [
+    {
+      "dataSourceId": "cd6527b3-b8a8-48eb-a0e0-db522d370aab",
+      "fieldsToHide": [
+        "has_account_betting",
+        "has_account_gaming",
+        "operational_player_account_group_id",
+        "player_account_state_name",
+        "player_address_validation",
+        "player_address",
+        "player_address_complement",
+        "player_address_has_house_number",
+        "player_allow_remarketing",
+        "player_belgian_province",
+        "player_birth_city",
+        "player_birthcountry_iso_code",
+        "player_city",
+        "player_civility_name",
+        "player_company",
+        "player_conditions_accepted_date",
+        "player_country_iso_code",
+        "player_generation_name",
+        "player_generation_order",
+        "player_identification_document_expiration_date",
+        "player_identification_document_issue_date",
+        "player_identity_status",
+        "player_is_email_activation_done",
+        "player_is_employee",
+        "player_is_resident",
+        "player_last_name_particle",
+        "player_last_successful_connection_date_utc",
+        "player_municipality",
+        "player_national_register_number",
+        "player_phone_number",
+        "player_phone_number_2",
+        "player_phone_validation",
+        "player_phone_validation_date",
+        "player_privacy_conditions_accepted_date",
+        "player_profession",
+        "player_registration_ip",
+        "player_registration_provider_name",
+        "player_second_first_name",
+        "player_second_last_name",
+        "player_sign_up_date_utc",
+        "player_sponsorship_code",
+        "player_zip_code",
+        "player_account_classification",
+        "player_receive_post_notification",
+        "primary_has_history"
+      ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "e1607c01-40a1-48e2-aa0e-bf55353f218c", 
+      "fieldsToHide": [ "player_last_successful_connection_time_utc" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "c2c08e2c-c8d7-4521-b61e-4dbe8cd54df2", 
+      "fieldsToHide": [ "player_registration_date_utc" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "51bb7e6d-bb58-42dc-989d-53e6c52dd203",
+      "fieldsToHide": [ "last_date" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "dea88ca5-45d3-477f-a23b-26589a96e2ab", 
+      "fieldsToHide": [ "full_date" ],
+      "fieldsToUnhide": []
+    }
+  ]
+}

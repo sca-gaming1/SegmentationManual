@@ -1,0 +1,26 @@
+{
+  "baseUrl": "https://sgmt-segmentation-{tenant}.cibe-prd-ee-sg.circus.be",
+  "dataProducts": [
+    {
+      "dataSourceId": "votre-datasource-id-1",
+      "fieldsToHide": [
+        "champSensible1",
+        "champSensible2",
+        "donneesInternes"
+      ],
+      "fieldsToUnhide": [
+        "champPublic"
+      ]
+    },
+    {
+      "dataSourceId": "votre-datasource-id-2",
+      "fieldsToHide": [
+        "champConfidentiel"
+      ],
+      "fieldsToUnhide": [
+        "champVisible1",
+        "champVisible2"
+      ]
+    }
+  ]
+}
