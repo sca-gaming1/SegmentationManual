@@ -1,0 +1,49 @@
+{
+  "baseUrl": "https://sgmt-segmentation-du.777be-prd-ee-sg.777.be",
+  "dataProducts": [
+    {
+      "dataSourceId": "cd6527b3-b8a8-48eb-a0e0-db522d370aab",
+      "fieldsToHide": [
+        "player_last_successful_connection_date_utc",
+        "has_account_gaming",
+        "player_language_code",
+        "player_status_name",
+        "long_unique_id"
+      ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "e1607c01-40a1-48e2-aa0e-bf55353f218c",
+      "fieldsToHide": [ "player_last_successful_connection_time_utc" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "c2c08e2c-c8d7-4521-b61e-4dbe8cd54df2",
+      "fieldsToHide": [ "player_registration_date_utc" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "51bb7e6d-bb58-42dc-989d-53e6c52dd203",
+      "fieldsToHide": [
+        "max_vip_status_guid",
+        "last_vip_status_guid"
+      ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "45e8c6f2-6fe0-4075-ab0d-9829e6d99591",
+      "fieldsToHide": [ "current_stage_id", "previous_stage_id" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "de1012b5-a6e3-437d-9b03-1947a0be333e",
+      "fieldsToHide": [ "player_connection_time_utc", "player_domain" ],
+      "fieldsToUnhide": []
+    },
+    {
+      "dataSourceId": "52fdfad4-371c-46af-b0c3-41b6057d3faf",
+      "fieldsToHide": [ "wallet_id", "transaction_id", "transaction_date_utc" ],
+      "fieldsToUnhide": []
+    }
+  ]
+}

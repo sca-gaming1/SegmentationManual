@@ -1,0 +1,77 @@
+PS C:\repositories\segmentation-manual> dotnet run --url https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be --config 310-config.json --method visibility
+Segmentation Manual - Management Tools
+
+Base URL: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be
+
+Selected tool: visibility - Manages field visibility (hide/unhide)
+
+
+Processing 7 DataProduct(s)...
+
+
+DataSource: cd6527b3-b8a8-48eb-a0e0-db522d370aab
+  Hide: player_last_successful_connection_date_utc
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_last_successful_connection_date_utc/Visibility/Hide
+Success: OK
+  Hide: has_account_gaming
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/has_account_gaming/Visibility/Hide
+Success: OK
+  Hide: player_language_code
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_language_code/Visibility/Hide
+Success: OK
+  Hide: player_status_name
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/cd6527b3-b8a8-48eb-a0e0-db522d370aab/Fields/player_status_name/Visibility/Hide
+Success: OK
+
+DataSource: e1607c01-40a1-48e2-aa0e-bf55353f218c
+  Hide: player_last_successful_connection_time_utc
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/e1607c01-40a1-48e2-aa0e-bf55353f218c/Fields/player_last_successful_connection_time_utc/Visibility/Hide
+Success: OK
+
+DataSource: c2c08e2c-c8d7-4521-b61e-4dbe8cd54df2
+  Hide: player_registration_date_utc
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/c2c08e2c-c8d7-4521-b61e-4dbe8cd54df2/Fields/player_registration_date_utc/Visibility/Hide
+Success: OK
+
+DataSource: 51bb7e6d-bb58-42dc-989d-53e6c52dd203
+  Hide: max_vip_status_guid
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/51bb7e6d-bb58-42dc-989d-53e6c52dd203/Fields/max_vip_status_guid/Visibility/Hide
+Success: OK
+  Hide: last_vip_status_guid
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/51bb7e6d-bb58-42dc-989d-53e6c52dd203/Fields/last_vip_status_guid/Visibility/Hide
+Success: OK
+
+DataSource: 45e8c6f2-6fe0-4075-ab0d-9829e6d99591
+  Hide: current_stage_id
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/45e8c6f2-6fe0-4075-ab0d-9829e6d99591/Fields/current_stage_id/Visibility/Hide
+Success: OK
+  Hide: previous_stage_id
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/45e8c6f2-6fe0-4075-ab0d-9829e6d99591/Fields/previous_stage_id/Visibility/Hide
+Success: OK
+
+DataSource: de1012b5-a6e3-437d-9b03-1947a0be333e
+  Hide: player_connection_time_utc
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/de1012b5-a6e3-437d-9b03-1947a0be333e/Fields/player_connection_time_utc/Visibility/Hide
+Success: OK
+  Hide: player_domain
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/de1012b5-a6e3-437d-9b03-1947a0be333e/Fields/player_domain/Visibility/Hide
+Success: OK
+
+DataSource: 52fdfad4-371c-46af-b0c3-41b6057d3faf
+  Hide: wallet_id
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/52fdfad4-371c-46af-b0c3-41b6057d3faf/Fields/wallet_id/Visibility/Hide
+Success: OK
+  Hide: transaction_id
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/52fdfad4-371c-46af-b0c3-41b6057d3faf/Fields/transaction_id/Visibility/Hide
+Success: OK
+  Hide: transaction_date_utc
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/52fdfad4-371c-46af-b0c3-41b6057d3faf/Fields/transaction_date_utc/Visibility/Hide
+Success: OK
+
+==================================================
+SUMMARY
+==================================================
+Success: 15
+Failures: 0
+Total: 15 operations
+==================================================
