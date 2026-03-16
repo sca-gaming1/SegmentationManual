@@ -1,0 +1,20 @@
+{
+  "baseUrl": "https://sgmt-segmentation-du.777be-prd-ee-sg.777.be",
+  "dataProducts": [
+    {
+      "dataSourceId": "51bb7e6d-bb58-42dc-989d-53e6c52dd203",
+      "fieldsToHide": [
+
+      ],
+      "fieldsToUnhide": [
+        "max_vip_status_guid",
+        "last_vip_status_guid"
+      ]
+    },
+    {
+      "dataSourceId": "45e8c6f2-6fe0-4075-ab0d-9829e6d99591",
+      "fieldsToHide": [],
+      "fieldsToUnhide": [ "current_stage_id", "previous_stage_id" ]
+    }
+  ]
+}

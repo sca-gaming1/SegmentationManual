@@ -1,0 +1,34 @@
+PS C:\repositories\segmentation-manual> dotnet run --url https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be  --config fix-310-config.json --method visibility
+Segmentation Manual - Management Tools
+
+Base URL: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be
+
+Selected tool: visibility - Manages field visibility (hide/unhide)
+
+
+Processing 2 DataProduct(s)...
+
+
+DataSource: 51bb7e6d-bb58-42dc-989d-53e6c52dd203
+  Unhide: max_vip_status_guid
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/51bb7e6d-bb58-42dc-989d-53e6c52dd203/Fields/max_vip_status_guid/Visibility/Unhide
+Success: OK
+  Unhide: last_vip_status_guid
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/51bb7e6d-bb58-42dc-989d-53e6c52dd203/Fields/last_vip_status_guid/Visibility/Unhide
+Success: OK
+
+DataSource: 45e8c6f2-6fe0-4075-ab0d-9829e6d99591
+  Unhide: current_stage_id
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/45e8c6f2-6fe0-4075-ab0d-9829e6d99591/Fields/current_stage_id/Visibility/Unhide
+Success: OK
+  Unhide: previous_stage_id
+Executing PUT: https://sgmt-segmentation-du.cibe-prd-ee-sg.circus.be/api/DataSources/45e8c6f2-6fe0-4075-ab0d-9829e6d99591/Fields/previous_stage_id/Visibility/Unhide
+Success: OK
+
+==================================================
+SUMMARY
+==================================================
+Success: 4
+Failures: 0
+Total: 4 operations
+==================================================
