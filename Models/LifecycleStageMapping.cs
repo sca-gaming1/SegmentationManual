@@ -2,33 +2,33 @@ namespace SegmentationManual.Models;
 
 public static class LifecycleStageMapping
 {
-    private static readonly Dictionary<string, int> _stageNameToId = new(StringComparer.OrdinalIgnoreCase)
+    private static readonly Dictionary<string, string> _stageNameToId = new(StringComparer.OrdinalIgnoreCase)
     {
-        { "Historical", 1 },
-        { "Non Depositors", 2 },
-        { "Dormant", 3 },
-        { "Churn 2", 4 },
-        { "Churn 1", 5 },
-        { "Active", 6 },
-        { "First Depositors", 7 },
-        { "Fun", 8 },
-        { "Unknown", -1 }
+        { "Historical", "1" },
+        { "Non Depositors", "2" },
+        { "Dormant", "3" },
+        { "Churn 2", "4" },
+        { "Churn 1", "5" },
+        { "Active", "6" },
+        { "First Depositors", "7" },
+        { "Fun", "8" },
+        { "Unknown", "-1" }
     };
 
-    private static readonly Dictionary<int, string> _stageIdToName = new()
+    private static readonly Dictionary<string, string> _stageIdToName = new()
     {
-        { 1, "Historical" },
-        { 2, "Non Depositors" },
-        { 3, "Dormant" },
-        { 4, "Churn 2" },
-        { 5, "Churn 1" },
-        { 6, "Active" },
-        { 7, "First Depositors" },
-        { 8, "Fun" },
-        { -1, "Unknown" }
+        { "1", "Historical" },
+        { "2", "Non Depositors" },
+        { "3", "Dormant" },
+        { "4", "Churn 2" },
+        { "5", "Churn 1" },
+        { "6", "Active" },
+        { "7", "First Depositors" },
+        { "8", "Fun" },
+        { "-1", "Unknown" }
     };
 
-    public static int? GetStageId(string stageName)
+    public static string? GetStageId(string stageName)
     {
         if (_stageNameToId.TryGetValue(stageName, out var id))
         {
@@ -37,7 +37,7 @@ public static class LifecycleStageMapping
         return null;
     }
 
-    public static string? GetStageName(int stageId)
+    public static string? GetStageName(string stageId)
     {
         if (_stageIdToName.TryGetValue(stageId, out var name))
         {
@@ -46,13 +46,14 @@ public static class LifecycleStageMapping
         return null;
     }
 
-    public static bool TryGetStageId(string stageName, out int stageId)
+    public static bool TryGetStageId(string stageName, out string stageId)
     {
-        if (_stageNameToId.TryGetValue(stageName, out stageId))
+        if (_stageNameToId.TryGetValue(stageName, out var foundId))
         {
+            stageId = foundId;
             return true;
         }
-        stageId = 0;
+        stageId = string.Empty;
         return false;
     }
 }
