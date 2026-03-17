@@ -89,19 +89,28 @@ This will:
 2. ? Fetch detailed information for each segment from `/InHouseSegments/{segmentId}`
 3. ? Search recursively through the query definition for the specified data product ID
 4. ? **Automatically transform field names and values:**
-   - `current_stage` ? `current_stage_id` with lifecycle stage names converted to IDs
-   - `previous_stage` ? `previous_stage_id` with lifecycle stage names converted to IDs
+   - `current_stage` ? `current_stage_id` with lifecycle stage names converted to string IDs
+   - `previous_stage` ? `previous_stage_id` with lifecycle stage names converted to string IDs
    - `last_vip_status` ? `last_vip_status_guid` with club level names converted to GUIDs
    - `max_vip_status` ? `max_vip_status_guid` with club level names converted to GUIDs
 5. ? Display only segments that **require transformation** (skip segments that don't use these fields)
 6. ? Generate ready-to-use PUT request bodies with transformed query definitions
+7. ? **Automatically save all update bodies to a file** in your Downloads folder
+
+**Update Body Format:**
+The generated PUT bodies contain only the essential fields:
+- `segmentName` - Name of the segment
+- `accountClassification` - Classification of the account (Casino/Betting)
+- `queryDefinition` - **With all transformations applied**
+
+**Note:** Fields like `listId`, `lastSynchronizedDate`, `meshSyncStatus`, and `syncedPlayersToIterableCount` are **excluded** from the update body as they should not be modified.
 
 **Transformations applied:**
 
-**Lifecycle Stages:**
-- "Non Depositors" ? 2
-- "Churn 1" ? 5
-- "Active" ? 6
+**Lifecycle Stages (as strings):**
+- "Non Depositors" ? "2"
+- "Churn 1" ? "5"
+- "Active" ? "6"
 - etc. (see full mapping in code)
 
 **VIP Club Levels:**
@@ -110,13 +119,10 @@ This will:
 - "Gold" ? "0571c538-da08-4ada-822a-614bc86b6866"
 - etc. (see full mapping in code)
 
-**Output includes:**
-- Segment name and ID
-- Account classification
-- List ID
-- Last synchronized date
-- Synced players count
-- **Full PUT request body ready to copy-paste** (only for segments needing transformation)
+**Output:**
+- Console display with all matching segments and their update bodies
+- **Automatic file save** to `%USERPROFILE%\Downloads\segment-updates-{dataProductId}-{timestamp}.txt`
+- Example filename: `segment-updates-45e8c6f2-6fe0-4075-ab0d-9829e6d99591-20260316-143022.txt`
 
 ## Saving Console Logs
 

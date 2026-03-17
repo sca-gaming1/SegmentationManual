@@ -130,12 +130,38 @@ public class SegmentFilterService : ITool
         Console.WriteLine("UPDATE BODIES (Ready to copy-paste for PUT requests)");
         Console.WriteLine($"{new string('=', 70)}\n");
 
+        var allBodiesText = new System.Text.StringBuilder();
+        allBodiesText.AppendLine("======================================================================");
+        allBodiesText.AppendLine("UPDATE BODIES (Ready to copy-paste for PUT requests)");
+        allBodiesText.AppendLine("======================================================================");
+        allBodiesText.AppendLine();
+
         foreach (var (segment, queryJson, fullBody, syncedCount) in matchingSegments)
         {
-            Console.WriteLine($"// Segment: {segment.SegmentName}");
-            Console.WriteLine($"// PUT /api/InHouseSegments/{segment.SegmentId}");
-            Console.WriteLine(fullBody);
-            Console.WriteLine($"\n{new string('-', 70)}\n");
+            var bodyText = $"// Segment: {segment.SegmentName}\n// PUT /api/InHouseSegments/{segment.SegmentId}\n{fullBody}\n\n{new string('-', 70)}\n";
+            
+            Console.WriteLine(bodyText);
+            allBodiesText.AppendLine(bodyText);
+        }
+
+        // Save to file
+        try
+        {
+            var downloadsPath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                "Downloads"
+            );
+            
+            var fileName = $"segment-updates-{filterConfig.DataProductId}-{DateTime.Now:yyyyMMdd-HHmmss}.txt";
+            var filePath = Path.Combine(downloadsPath, fileName);
+            
+            await File.WriteAllTextAsync(filePath, allBodiesText.ToString(), cancellationToken);
+            
+            Console.WriteLine($"\n✓ Update bodies saved to: {filePath}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"\n⚠ Could not save file: {ex.Message}");
         }
 
         return result;
@@ -240,41 +266,9 @@ public class SegmentFilterService : ITool
 
             var updateBody = new Dictionary<string, object?>();
 
-            // Extract required fields
+            // Extract only required fields for update (exclude listId, lastSynchronizedDate, meshSyncStatus, syncedPlayersToIterableCount)
             if (root.TryGetProperty("segmentName", out var segmentName))
                 updateBody["segmentName"] = segmentName.GetString();
-
-            if (root.TryGetProperty("listId", out var listId))
-                updateBody["listId"] = listId.ValueKind == JsonValueKind.Number ? listId.GetInt32() : 0;
-
-            if (root.TryGetProperty("lastSynchronizedDate", out var lastSyncDate))
-                updateBody["lastSynchronizedDate"] = lastSyncDate.GetString();
-
-            if (root.TryGetProperty("meshSyncStatus", out var meshSyncStatus))
-            {
-                if (meshSyncStatus.ValueKind == JsonValueKind.Object)
-                {
-                    var meshStatus = new Dictionary<string, object?>();
-                    
-                    if (meshSyncStatus.TryGetProperty("status", out var status))
-                        meshStatus["status"] = status.GetString();
-                    
-                    if (meshSyncStatus.TryGetProperty("occuredAt", out var occuredAt))
-                        meshStatus["occuredAt"] = occuredAt.GetString();
-                    
-                    if (meshSyncStatus.TryGetProperty("lastSuccessfulSyncedAt", out var lastSuccess))
-                        meshStatus["lastSuccessfulSyncedAt"] = lastSuccess.GetString();
-                    
-                    updateBody["meshSyncStatus"] = meshStatus;
-                }
-                else
-                {
-                    updateBody["meshSyncStatus"] = null;
-                }
-            }
-
-            if (root.TryGetProperty("syncedPlayersToIterableCount", out var syncedCount))
-                updateBody["syncedPlayersToIterableCount"] = syncedCount.ValueKind == JsonValueKind.Number ? syncedCount.GetInt32() : 0;
 
             if (root.TryGetProperty("accountClassification", out var accountClass))
                 updateBody["accountClassification"] = accountClass.GetString();
@@ -297,10 +291,6 @@ public class SegmentFilterService : ITool
             // If body generation fails, return minimal body
             return @"{
   ""segmentName"": ""string"",
-  ""listId"": 0,
-  ""lastSynchronizedDate"": null,
-  ""meshSyncStatus"": null,
-  ""syncedPlayersToIterableCount"": 0,
   ""accountClassification"": ""string"",
   ""queryDefinition"": {}
 }";
